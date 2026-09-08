@@ -1,0 +1,74 @@
+# --- Theme-Einbindung ---
+include ~/.local/state/omarchy/current/theme/kitty.conf
+
+# --- Schriftart (Font) ---
+font_family JetBrainsMono Nerd Font
+bold_italic_font     auto
+font_size            11.5
+
+# --- Fenster-Layout & Transparenz ---
+window_padding_width 14
+hide_window_decorations yes
+confirm_os_window_close 0
+background_opacity   0.85
+
+# --- Fancy Hintergrundbild / GIF ---
+# Falls du ein Bild oder animiertes GIF im Hintergrund willst,
+# entferne das '#' vor den nächsten zwei Zeilen und passe den Pfad an:
+# background_image      /pfad/zu/deinem/wallpaper_oder_gif.gif
+# background_image_layout scaled
+
+# --- Tastenkombinationen (Keybindings) ---
+map ctrl+insert      copy_to_clipboard
+map shift+insert     paste_from_clipboard
+
+# --- System- & Fernsteuerung ---
+allow_remote_control yes
+shell /usr/bin/zsh
+
+# --- Ästhetik & Dynamic Cursor ---
+cursor_shape         block
+cursor               none
+cursor_blink_interval 0
+shell_integration    no-cursor
+enable_audio_bell    no
+
+# --- Clean Warp-Effekt (Cursor Trail) ---
+cursor_trail         6
+cursor_trail_start_threshold 0
+cursor_trail_decay   0.1 0.3
+
+# --- Performance & Flüssigkeit ---
+repaint_delay        8
+input_delay          2
+
+# --- Fancy Modern Tab bar ---
+tab_bar_edge         bottom
+tab_bar_style        fade
+tab_fade             0.25 0.5 0.75 1
+active_tab_font_style bold
+tab_title_template   {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
+
+# --- Fenster-Rahmen ---
+window_border_width  1pt
+active_border_color  #3d59a1
+
+# --- Cyberpunk-Unterstreichungen (Undercurls) ---
+# Macht Wellenlinien bei Fehlern oder Markierungen dünn und elegant
+undercurl_style      thin-sparse
+
+# --- Interaktive Hyperlinks ---
+# URLs im Terminal werden wellig unterstrichen und sind mit Strg+Klick direkt aufrufbar
+url_style            curly
+detect_urls          yes
+open_url_with        default
+url_prefixes         file ftp ftps gemini git gopher http https irc ircs kitty mailto news sftp ssh
+
+# Send Shift+Enter as CSI-u so TUIs can distinguish it from Enter.
+map shift+enter send_text all \e[13;2u
+
+# Kitty legacy encoding sends Alt+Shift+Enter the same as Alt+Enter; send CSI-u so tmux can match M-S-Enter.
+map alt+shift+enter send_text all \e[13;4u
+
+# Allow cwd lookup from global keybindings
+listen_on unix:${XDG_RUNTIME_DIR}/omarchy-kitty-{kitty_pid}
