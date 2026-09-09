@@ -121,31 +121,17 @@ hl.animation({
 hl.animation({
   leaf = "layersIn",
   enabled = true,
-  speed = 3,
-  bezier = "omarchyEase",
+  speed = 5,
+  bezier = "omarchyFade",
   style = "fade",
 })
 
 hl.animation({
   leaf = "layersOut",
   enabled = true,
-  speed = 2.4,
+  speed = 4,
   bezier = "omarchyFade",
   style = "fade",
-})
-
-hl.animation({
-  leaf = "fadeLayersIn",
-  enabled = true,
-  speed = 2.5,
-  bezier = "omarchyFade",
-})
-
-hl.animation({
-  leaf = "fadeLayersOut",
-  enabled = true,
-  speed = 2.0,
-  bezier = "omarchyFade",
 })
 
 

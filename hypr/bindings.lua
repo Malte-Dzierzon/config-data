@@ -42,3 +42,6 @@ pcall(require, "hypr.omalang_binds")
 -- omalang:binds begin (managed by Omalang — do not edit)
 pcall(require, "hypr.omalang_binds")
 -- omalang:binds end
+
+-- Alt-Switcher (ALT+TAB across all workspaces)
+dofile(os.getenv("HOME") .. "/.config/omarchy/plugins/io.github.pablo-merino.altswitch/altswitch.lua")

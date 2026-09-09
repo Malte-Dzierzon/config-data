@@ -1,4 +1,20 @@
 {
+  "use_smartcase_search": true,
+  "search": {
+    "case_sensitive": false,
+    "whole_word": true
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false
+  },
+  "use_system_path_prompts": true,
   "vim_mode": true,
   "cli_default_open_behavior": "existing_window",
   "active_pane_modifiers": {
@@ -6,7 +22,7 @@
   },
   "context_servers": {
     "shadcn-mcp-server": {
-      "enabled": true,
+      "enabled": false,
       "remote": false,
       "settings": {}
     }
@@ -28,7 +44,7 @@
     "default_model": {
       "effort": "max",
       "provider": "opencode",
-      "model": "zen/big-pickle",
+      "model": "zen/muse-spark-1.3-contributor-free",
       "enable_thinking": false
     },
     "play_sound_when_agent_done": "always",
@@ -95,6 +111,13 @@
     "model_parameters": []
   },
   "agent_servers": {
+    "Oh My Pi": {
+      "type": "custom",
+      "command": "omp",
+      "args": [
+        "acp"
+      ]
+    },
     "opencode": {
       "default_config_options": {
         "effort": "xhigh",
@@ -243,6 +266,7 @@
   },
   "hard_tabs": false,
   "vim": {
+    "use_smartcase_find": true,
     "toggle_relative_line_numbers": false
   },
   "toolbar": {
